@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter total amount: </h1>
+    <input type="text" id="in1">
+
+    <h1 id="ans">0</h1>
+</body>
+</html>
+<script>
+    let amount = document.getElementById("in1").value
+
+    let percent = amount * (18 /100)
+
+    let total_amount = +amount + percent
+
+    document.getElementById("ans").innerText = total_amount
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>Student Marks</h1>
+
+    <label for="">Enter maths marks</label><br><br>
+    <input type="text" id="maths"><br><br><br>
+
+
+    
+    <label for="">Enter English marks</label><br><br>
+    <input type="text" id="english"><br><br><br>    
+
+    
+    <label for="">Enter gujarati marks</label><br><br>
+    <input type="text" id="gujarati"><br><br><br>   
+
+    
+    <label for="">Enter hindi marks</label><br><br>
+    <input type="text" id="hindi"><br><br><br>  
+
+    
+    <label for="">Enter sciences marks</label><br><br>
+    <input type="text" id="sciences"><br><br><br>   
+
+
+    <h1 id="ans"></h1>
+
+
+</center>
+
+
+</body>
+</html>
+
+
+<script>
+
+    let math = document.getElementById("maths").value
+    let english = document.getElementById("english").value
+    let gujarati = document.getElementById("gujarati").value 
+    let hindi = document.getElementById("hindi").value 
+    let sciences = document.getElementById("sciences").value 
+
+    let total = +math + +english + +gujarati + +hindi + +sciences
+    
+    let percentage = (total / 500) * 100
+
+    document.getElementById("ans").innerHTML = percentage
+</script>
