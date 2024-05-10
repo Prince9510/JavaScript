@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+
+        <h1>Enter Angles </h1>
+
+        <br>
+        <label for="">Enter First Angle</label><br><br>
+        <input type="text" id="angle1"><br><br><br>
+
+        <label for="">Enter Second Angle</label><br><br>
+        <input type="text" id="angle2"><br><br><br>
+
+
+        <label for="">Enter Third Angle</label><br><br>
+        <input type="text" id="angle3"><br><br><br>
+
+        <h1 id="tri"></h1>
+
+        <h1 id="type"></h1>
+
+    </center>
+</body>
+</html>
+
+<script>
+    let angle1 = document.getElementById("angle1").value 
+    let angle2 = document.getElementById("angle2").value 
+    let angle3 = document.getElementById("angle3").value 
+    let sum = +angle1 + +angle2 + +angle3
+
+    if(angle1 === "" && angle2 === "" && angle3 === ""){
+        document.getElementById("tri").innerHTML = "Enter Valid Value"
+    }else{
+        if(sum === 180){
+            document.getElementById("tri").innerHTML = "triangles"
+        }else{
+            document.getElementById("tri").innerHTML = "Not a triangles"
+        }
+        
+
+        //////
+
+        if(angle1 === angle2 && angle2 === angle3 && angle3 === angle1){
+            document.getElementById("type").innerHTML = "equilateral"
+        }else if(angle1 === angle2 || angle2 === angle3 || angle3 === angle1){
+            document.getElementById("type").innerHTML = "isosceles"
+
+        }else{
+            document.getElementById("type").innerHTML = "scalene"
+            
+        }
+        
+    }
+
+
+    // 
+
+    
+</script>

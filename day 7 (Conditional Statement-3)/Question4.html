@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Enter Your Ange: </h1>
+        <input type="text" id="in">
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+    let Age = document.getElementById("in").value
+
+
+    if(Age === ""){
+        document.getElementById("ans").innerHTML = "Enter Valid Value"
+    }else{
+        if (Age >= 0 && Age <= 10) {
+    document.getElementById("ans").innerHTML = "You are a Child"
+} else if(Age >= 11 && Age <= 20) {
+    document.getElementById("ans").innerHTML = "You are a Teenager"
+}else if(Age >= 21 && Age <= 30) {
+    document.getElementById("ans").innerHTML = "You are an Adult"
+}
+
+    }
+
+
+
+</script>
