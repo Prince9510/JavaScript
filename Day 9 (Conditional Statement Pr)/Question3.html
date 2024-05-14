@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+    #wrong{
+        color: red;
+    }
+    #ans{
+        color: green;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Montserrat", sans-serif;
+
+    }
+    .center{
+       height: 200px; 
+       padding: 50px;
+       border-radius: 10px;
+       width: inherit;
+       border: 2px solid gray;
+    }
+  
+</style>
+<body>
+    <div class="center">
+        <center>
+    <h1>Guess Any Number</h1>
+   
+    <input type="text" id="Number">
+
+    
+
+    <h1 id="wrong"></h1>
+    <h1 id="ans"></h1>
+    <h1 id="guess"></h1>
+    <h1 id="write"></h1>
+</center>
+</div>
+</body>
+</html>
+
+<script>
+    let SecretNumber = 6
+    let Guess = document.getElementById("Number").value 
+
+   if(Guess === ""){
+    document.getElementById("guess").innerHTML = "Guess The Number"
+   }else{
+    if(Guess >= 7 && Guess <= 20){
+        document.getElementById("wrong").innerHTML = "Enter More Lower Amount"
+    }else if(Guess < 6){
+        document.getElementById("wrong").innerHTML = "Enter Higher Amount"
+    }else if(Guess >= 21){
+        document.getElementById("write").innerHTML = "Enter only 1 to 20 numbers"
+    }else{
+        document.getElementById("ans").innerHTML = "Correct"
+
+    }
+   }
+
+</script>

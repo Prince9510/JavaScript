@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    #ans{
+        color: green;
+    }
+    body{
+        
+        font-family: "Montserrat", sans-serif;
+
+    }
+</style>
+<body>
+    <center>
+        <h1>Convert Doller to INR</h1>
+        
+        <br><br>
+
+
+        <h2>Enter your Doller </h2>
+        <input type="text" id="Doller">
+
+        <h1 id="ans">
+
+        </h1>
+
+        <h1 id="valid"></h1>
+
+    </center>
+</body>
+</html>
+<script>
+    let doller = document.getElementById("Doller").value 
+
+    if(doller === ""){
+        document.getElementById("valid").innerHTML = "Enter Valid Doller Amount"
+    }else{
+        
+    let convert = doller * 83.51 
+
+document.getElementById("ans").innerHTML = "INR price is " + convert
+    }
+</script>
