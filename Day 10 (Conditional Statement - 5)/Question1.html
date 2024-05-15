@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Enter Any Day of Week</h1>
+
+        <input type="text" id="day">
+
+        <h1 id="ans"></h1>
+    </center>
+    
+</body>
+</html>
+<script>
+    let Days = document.getElementById("day").value 
+
+    if(Days === ""){
+        document.getElementById("ans").innerHTML = ""
+    }else{
+        
+    switch(Days){
+       case "monday" : document.getElementById("ans").innerHTML = "It's the start of the workweek."
+       break
+
+       case "friday" : document.getElementById("ans").innerHTML = "It's almost the weekend!"
+       break 
+
+       case "tuesday" : document.getElementById("ans").innerHTML = "It's some other day."
+       break
+
+       case "wednesday" : document.getElementById("ans").innerHTML = "It's some other day."
+       break
+
+       
+       case "thursday" : document.getElementById("ans").innerHTML = "It's some other day."
+       break
+       
+
+       case "friday" : document.getElementById("ans").innerHTML = "It's some other day."
+       break
+        
+       case "saturday" : document.getElementById("ans").innerHTML = "It's some other day."
+       break
+
+       case "sunday" : document.getElementById("ans").innerHTML = "It's some other day."
+       break
+
+        default : document.getElementById("ans").innerHTML = "invalid"
+    }
+    }
+</script>

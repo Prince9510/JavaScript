@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <center>
+        <h1>--------------Traffic Light--------------</h1>
+        
+        <select name="operator" id="lights">
+            
+            <option value="Red">Red</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Green">Green</option>
+        </select>
+
+        <br><br>
+        <h1  style="border: 1px solid rgba(0, 0, 0, 0.184); width: 400px;" id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+    let light = document.getElementById("lights").value
+
+   
+        
+    switch (light) {
+        case "Red":
+            document.getElementById("ans").innerHTML = "Stop!!!!!"
+            break;
+        case "Yellow":
+            document.getElementById("ans").innerHTML = "Slow Down"
+            break;
+        case "Green":
+            document.getElementById("ans").innerHTML = "Go!!!!"
+            break;
+       
+    
+        
+    }
+    
+</script>

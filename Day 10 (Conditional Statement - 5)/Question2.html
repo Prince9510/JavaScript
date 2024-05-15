@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Calculator</h1>
+
+        <input type="text" id="number1">
+        <br><br>
+
+       <select name="" id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="*">*</option>
+       </select>
+
+       <br><br>
+
+
+       <input type="text" id="number2">
+
+       <h1 id="ans">
+
+       </h1>
+
+
+    </center>
+</body>
+</html>
+
+
+<script>
+    let value1 = document.getElementById("number1").value 
+    let value2 = document.getElementById("number2").value 
+    let operator = document.getElementById("operator").value
+
+
+    if(value1 === "" || value2 === ""){
+        document.getElementById("ans").innerHTML = "Please Enter Valid number"
+    }else{
+        
+    switch(operator){
+
+case "+" : 
+let sum = +value1 + +value2
+
+document.getElementById("ans").innerHTML = "Addition is " + sum
+break 
+
+case "-" : 
+document.getElementById("ans").innerHTML = "substraction is " + (+value1 - +value2) 
+break 
+
+case "/" : document.getElementById("ans").innerHTML = "division is " + (+value1 / +value2)
+break 
+
+case "*" : document.getElementById("ans").innerHTML = "multification is " + (+value1 * +value2)
+break 
+
+
+
+
+}
+    }
+</script>

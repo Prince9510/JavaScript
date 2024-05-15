@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>--------- MENU --------- </h1>
+
+    <select name="" id="menu">
+        <option value="Spiced Paneer Sandwich in Focaccia">Spiced Paneer Sandwich in Focaccia</option>
+        <option value="Pesto & Mozzarella Panini Sandwich">Pesto & Mozzarella Panini Sandwich</option>
+        <option value="Herbed Chicken Focaccia Sandwich">Herbed Chicken Focaccia Sandwich</option>
+        <option value="BBQ Chicken Wrap">BBQ Chicken Wrap</option>
+        <option value="Tandoori Soya Chaap Wrap">Tandoori Soya Chaap Wrap</option>
+       
+    </select>
+
+    <br>
+
+    <h1 id="ans"></h1>
+</center>
+</body>
+</html>
+
+<script>
+
+    let star = document.getElementById("menu").value 
+
+    switch(star){
+        case "Spiced Paneer Sandwich in Focaccia" : 
+        document.getElementById("ans").innerHTML = "Spiced Paneer Sandwich in Focaccia price is 446.25₹"
+
+        break 
+
+        case "Pesto & Mozzarella Panini Sandwich" : 
+        document.getElementById("ans").innerHTML = "Pesto & Mozzarella Panini Sandwich price is 782.56₹"
+        break 
+
+        case "Herbed Chicken Focaccia Sandwich" : 
+        document.getElementById("ans").innerHTML = "Herbed Chicken Focaccia Sandwich price is 1502.22₹"
+        break 
+        
+        case "BBQ Chicken Wrap" : 
+        document.getElementById("ans").innerHTML = "BBQ Chicken Wrap price is 222.06₹"
+        break 
+
+
+        case "Tandoori Soya Chaap Wrap" : 
+        document.getElementById("ans").innerHTML = "Tandoori Soya Chaap Wrap price is 1999.99₹"
+        break 
+
+
+    }
+</script>
