@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Enter Any Name</h1>
+
+        <input type="text" id="vowel">
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+
+<script>
+    
+    let vowel = document.getElementById("vowel").value 
+    let VowelCount = 0
+  
+
+    for(let i = 0; i <= vowel.length; i++){
+          if(vowel[i] === 'a' || vowel[i] === 'e' || vowel[i] === 'i' || vowel[i] === 'o' || vowel[i] === 'u'){
+        VowelCount++
+    }
+
+    }
+
+    document.getElementById("ans").innerHTML = VowelCount
+
+</script>

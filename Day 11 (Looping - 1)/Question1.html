@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Enter Any Name for Check Name is palindrome Or Not</h1>
+
+        <input type="text" id="palindrome">
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+
+<script>
+    let palindromes = document.getElementById("palindrome").value 
+    let res1 = ""
+    let res2 = ""
+
+    if(palindromes === ""){
+        document.getElementById("ans").innerHTML = ""
+    }else{
+        for(let i = 0; i <= palindromes.length - 1 ; i++){
+        res1 += palindromes[i]
+    }
+
+    for(let i = palindromes.length - 1; i >= 0 ; i--){
+        res2 += palindromes[i]
+    }
+
+
+    if(res1 === res2){
+        document.getElementById("ans").innerHTML = "palindrome!"
+    }else{
+        document.getElementById("ans").innerHTML = "Not a palindrome!"
+
+    }
+
+    }
+        
+   
+   
+
+    
+</script>
