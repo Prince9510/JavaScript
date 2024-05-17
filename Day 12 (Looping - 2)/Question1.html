@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Count Number of Digits in a Number</title>
+  </head>
+  <body>
+    <center>
+    <h1>Count Number of Digits in a Number</h1>
+    <input type="number" id="num" name="num"><br><br>
+    <h1 id="result"></h1>
+</center>
+
+    <script>
+      
+        const num = document.getElementById("num").value;
+
+        let digitCount = 0;
+
+        let numCopy = num;
+        do {
+          numCopy = Math.floor(numCopy / 10);
+          digitCount++;
+        } while (numCopy > 0);
+
+        document.getElementById("result").innerHTML = "number od digit is : " +  digitCount;
+     
+    </script>
+  </body>
+</html>

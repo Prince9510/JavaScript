@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <center>
+        <h1>Enter the number</h1>
+        <input type="number" id="input">
+        <h1>Enter the exponent</h1>
+        <input type="number" id="input2">
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+    let number = document.getElementById("input").value
+    let exponent = document.getElementById("input2").value
+    let i = 1
+    let power = 1
+
+    do {
+        power *= number
+        document.getElementById("ans").innerHTML = power
+        i++
+    } while (i <= exponent);
+
+</script>
