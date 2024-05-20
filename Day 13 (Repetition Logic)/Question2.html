@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        font-family: 'Courier New', Courier, monospace;
+    }
+    #ans{
+        color: green;
+    }
+</style>
+
+<body>
+    <center>
+        <h1>Enter the number</h1>
+        <input type="number" id="input">
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+    let number = document.getElementById("input").value
+    let rev 
+    let reminder
+    let sum = 0
+
+    for(let i = number; i != 0; i--){
+        reminder = number % 10 
+        sum += reminder
+        rev = rev * 10 + reminder
+        number = Math.floor(number/10)
+    }
+    
+   
+    document.getElementById("ans").innerHTML = sum
+</script>
