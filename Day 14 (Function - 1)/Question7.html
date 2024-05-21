@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Enetr value : </h1>
+
+        <select name="" id="tf">
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select>
+
+        
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+    let darkMode = document.getElementById("tf").value
+    
+    let ans = function(){
+
+        if (darkMode === "true") {
+            document.getElementById("ans").innerHTML = "On"
+        }    
+        else{
+            document.getElementById("ans").innerHTML = "Off"
+
+        }
+        
+    }
+    ans()
+</script>

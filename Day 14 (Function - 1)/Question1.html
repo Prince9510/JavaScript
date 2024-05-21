@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter any number</h1>
+
+    <input type="text" id="num1">
+
+    <h2>Enter second number</h2>
+
+    <input type="text" id="num2">
+
+    <h1 id="res"></h1>
+</body>
+</html>
+
+<script>
+
+    let multi = function(){
+        let number1 = document.getElementById("num1").value 
+
+        let number2 = document.getElementById("num2").value  
+
+        let result = number1 * number2
+        document.getElementById("res").innerHTML = result
+    }
+    multi()
+</script>

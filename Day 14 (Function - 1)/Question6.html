@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter any number</h1>
+
+    <input type="text" id="num1">
+
+    <h1 id="res"></h1>
+</body>
+</html>
+
+<script>
+
+    let odd = function(){
+        let number1 = document.getElementById("num1").value 
+
+
+        if(number1 % 2 != 0){
+            document.getElementById("res").innerHTML = "odd"
+
+        }else{
+            document.getElementById("res").innerHTML = "Even"
+
+        }
+    }
+    odd()
+</script>
