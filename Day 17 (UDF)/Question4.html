@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        color: cornflowerblue;
+        font-family: cursive;
+    }
+
+    #ans{
+        color: springgreen;
+        font-family: fantasy;
+    }
+</style>
+<body>
+    <center>
+        <br><br><br>
+        <h1>Enter String:</h1>
+        <input type="text" id="s1">
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+    function palindrom(name){
+    function pal(){
+        
+        let number =document.getElementById("s1").value
+        let res1 = ""
+        let res2 = ""
+        if(number===""){
+            document.getElementById("ans").innerHTML = "Please Enter a Number"
+        }else{
+        for(let i = 0; i<number.length; i++){
+            res1+=number[i]
+    }
+    for(let i = number.length-1; i>=0; i--){
+        res2+=number[i]
+    }
+    if(res1==res2){
+        document.getElementById("ans").innerHTML = "The Number Palindrom"
+    }else{
+        document.getElementById("ans").innerHTML = "The Number not Palindrom"
+    }
+}
+}
+pal()
+    }
+    palindrom()
+</script>

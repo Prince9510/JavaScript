@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        color: cornflowerblue;
+        font-family: cursive;
+    }
+
+    #ans{
+        color: springgreen;
+        font-family: fantasy;
+    }
+</style>
+
+<body>
+    <center>
+        <h1>Enter the principal amount: </h1>
+        <input type="number" id="in1">
+        <h1>Enter the rate: </h1>
+        <input type="number" id="in2">
+        <h1>Enter the time: </h1>
+        <input type="number" id="in3">
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+
+</html>
+<script>
+    let principal = document.getElementById("in1").value
+    let rate = document.getElementById("in2").value
+    let time = document.getElementById("in3").value
+    let simple_intrest
+
+
+    function simpleintrest(principal, rate, time, simple_intrest) {
+        simple_intrest = (principal * rate * time) / 100
+        
+        document.getElementById("ans").innerHTML = simple_intrest
+    }
+
+    simpleintrest(principal, rate, time, simple_intrest)
+
+
+</script>
