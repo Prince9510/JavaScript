@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: rgba(245, 222, 179, 0.381);
+    }
+    #addition{
+        color: rgb(0, 179, 0);
+    }
+</style>
+<body>
+    <br><br>
+    <center>
+        <h1 id="arr"></h1>
+
+    <h1 id="ans"></h1>
+
+    <h1 id="addition"></h1>
+</center>
+</body>
+</html>
+<script>
+    let temp = 0
+    let arr = [1,2,3,4]
+
+    document.getElementById("arr").innerHTML = "Your Array Is : " + arr
+    
+    let ans = arr.filter((element)=>{ 
+
+        if(element % 2 == 1){
+        return document.getElementById("addition").innerHTML = "Addition Is : " + (temp = temp + element) 
+        }
+
+    }
+) 
+    document.getElementById("ans").innerHTML = "Array Odd Element Is : " + ans,temp
+</script>
