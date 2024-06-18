@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    let student = [
+        {name : "a" , marks : 45 , roll : "31"},
+        {name : "b" , marks : 78 , roll : "10"},
+        {name : "c" , marks : 21 , roll : "22"},
+        {name : "d" , marks : 89 , roll : "45"},
+        {name : "e" , marks : 5 , roll : "1"},
+    ]
+
+
+    let ans = student.filter((el)=>{
+        return el.marks > 60 && el.roll > 15
+    })
+
+
+    console.log(ans)
+</script>
