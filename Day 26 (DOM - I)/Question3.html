@@ -30,28 +30,39 @@
 </html>
 
 <script>
-    let first = document.querySelector("#First").value
+    function multiply(){
+        let first = document.querySelector("#First").value
     let second = document.querySelector("#Second").value
 
-    function multiply(){
         let ans = +first * +second
 
         document.querySelector("#ans").textContent ="answer is " +  ans
     }
 
     function add(){
+        let first = document.querySelector("#First").value
+    let second = document.querySelector("#Second").value 
+
         let ans = +first + +second
         document.querySelector("#ans").textContent ="answer is " +  ans
+
     }
 
     function subtract(){
+        let first = document.querySelector("#First").value
+    let second = document.querySelector("#Second").value
+
         let ans = +first - +second
         document.querySelector("#ans").textContent ="answer is " +  ans
 
     }
 
     function divide(){
+        let first = document.querySelector("#First").value
+    let second = document.querySelector("#Second").value
+    
         let ans = +first / +second
         document.querySelector("#ans").textContent ="answer is " +  ans
+
     }
 </script>
