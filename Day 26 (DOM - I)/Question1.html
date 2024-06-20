@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>Red And White</h1>
+    <h3>Multimedia</h3>
+    <h5>Education</h5>
+
+    <button onclick="red()">Red color</button>
+    <button onclick="green()">Green color</button>
+    <button onclick="blue()">Blue color</button>
+    <button onclick="allgreen()">All Green Color</button>
+    <button onclick="allblue()">All Blue Color</button>
+    <button onclick="allred()">All Red Color</button>
+</center>
+</body>
+</html>
+<script>
+     function red(){
+          document.querySelector("h1").style.color = "red"
+     }
+
+     function green(){
+          document.querySelector("h3").style.color = "green"
+     }
+
+     function blue(){
+          document.querySelector("h5").style.color = "blue"
+     }
+
+
+     function allgreen(){
+        let heading = document.querySelectorAll("h1")
+        let heading1 = document.querySelectorAll("h3")
+        let heading2 = document.querySelectorAll("h5")
+        for(let i = 0 ; i < heading.length ; i++){
+            heading[i].style.color = "green"
+        }
+        for(let i = 0 ; i < heading1.length ; i++){
+            heading1[i].style.color = "green"
+        }
+        for(let i = 0 ; i < heading2.length ; i++){
+            heading2[i].style.color = "green"
+        }
+     }
+
+
+
+     function allblue(){
+        let heading3 = document.querySelectorAll("h1")
+        let heading4 = document.querySelectorAll("h3")
+        let heading5 = document.querySelectorAll("h5")
+        for(let i = 0 ; i < heading3.length ; i++){
+            heading3[i].style.color = "blue"
+        }
+        for(let i = 0 ; i < heading4.length ; i++){
+            heading4[i].style.color = "blue"
+        }
+        for(let i = 0 ; i < heading5.length ; i++){
+            heading5[i].style.color = "blue"
+        }
+     }
+
+
+     function allred(){
+        let heading6 = document.querySelectorAll("h1")
+        let heading7 = document.querySelectorAll("h3")
+        let heading8 = document.querySelectorAll("h5")
+        for(let i = 0 ; i < heading6.length ; i++){
+            heading6[i].style.color = "red"
+        }
+        for(let i = 0 ; i < heading7.length ; i++){
+            heading7[i].style.color = "red"
+        }
+        for(let i = 0 ; i < heading8.length ; i++){
+            heading8[i].style.color = "red"
+        }
+     }
+
+</script>
