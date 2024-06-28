@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #main {
+            background: linear-gradient(to bottom, #FFA500, #FF4500);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <div id="main" class="h-screen w-screen flex justify-center items-center">
+        <div class="form h-[85vh] w-[70vh] bg-[#fff] rounded-[20px] overflow-hidden">
+            <div class="form_head h-[20%] w-full flex justify-center items-center flex-col">
+                <h1 class="text-[2vw] font-[700]">Registration Form</h1>
+                <h6 class="text-[0.9vw]">Flii out the form carfully for registration</h6>
+            </div>
+            <h1 id="err" class="text-red-600 text-center"></h1>
+            
+            <form action="" id="submit" class="mt-[8%] ">
+                <div class="flex w-full gap-[8%] justify-center items-start px-[5%] gap-[10px]">
+                    <div class="flex flex-col">
+                        <label for="StudentName" class="text-[1.3vw]">Student Name</label>
+                        <input type="text" placeholder="" id="first-name"
+                            class="bg-transparent border-[1px] border-[#9ea0a2] p-[5px] rounded-[5px] text-[#9ea0a2] text-[1vw]">
+                        <h6 class="text-[0.9vw] mt-[8px] text-[#9ea0a2]">Firts Name</h6>
+                    </div>
+                    <div class="flex flex-col">
+                        <!-- <label for="StudentName" class="text-[1.3vw]"> </label> -->
+                        <input type="text" placeholder="" id="last-name"
+                            class="bg-transparent mt-[30px] border-[1px] border-[#9ea0a2] p-[5px] rounded-[5px] text-[#9ea0a2] text-[1vw]">
+                        <h6 class="text-[0.9vw] mt-[8px] text-[#9ea0a2]">Last Name</h6>
+                    </div>
+                </div>
+                <div class="flex w-full gap-[8%] justify-center items-start px-[5%] gap-[10px] mt-[5%]">
+                    <div class="flex flex-col">
+                        <label for="StudentName" class="text-[1.3vw]">Gender</label>
+                        <select name="" id="gender"
+                            class=" bg-transparent border-[1px] border-[#9ea0a2] p-[6px] rounded-[5px] text-[#9ea0a2] text-[1vw]">
+                            <option value="">Select Your Gender</option>
+                            <option value="">Male</option>
+                            <option value="">Female</option>
+                            <option value="">Other</option>
+                        </select>
+                        <input type="text" value="" id="first_name">
+                        <!-- <h6 class="text-[0.9vw] mt-[8px] text-[#9ea0a2]">Firts Name</h6> -->
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="StudentName" class="text-[1.3vw]"> Student E-mail</label>
+                        <input type="text" placeholder="ex: myname@example.com" id="email" class="bg-transparent  border-[1px] border-[#9ea0a2] p-[5px] rounded-[5px] text-[#9ea0a2] text-[1vw]">
+                        <!-- <h6 class="text-[0.9vw] mt-[8px] text-[#9ea0a2]">Last Name</h6> -->
+                    </div>
+                </div>
+                <div class="flex w-full gap-[8%] justify-center items-start px-[5%] gap-[10px] mt-[5%]">
+                    
+                    <div class="flex flex-col">
+                        <label for="StudentName" class="text-[1.3vw]"> Student ID</label>
+                        <input type="text"  id="std-id" class="bg-transparent  border-[1px] border-[#9ea0a2] p-[5px] rounded-[5px] text-[#9ea0a2] text-[1vw]">
+                        <!-- <h6 class="text-[0.9vw] mt-[8px] text-[#9ea0a2]">Last Name</h6> -->
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="StudentName" class="text-[1.3vw]">List Of Classes</label>
+                        <select name="" id="gender" aria-placeholder="please select"
+                            class=" bg-transparent border-[1px] border-[#9ea0a2] p-[6px] rounded-[5px] text-[#9ea0a2] text-[1vw]">
+                            <option value="">Please select</option>
+                            <option value="">Female</option>
+                            <option value="">Other</option>
+                        </select>
+                        <input type="text" value="" id="first_name">
+                        <!-- <h6 class="text-[0.9vw] mt-[8px] text-[#9ea0a2]">Firts Name</h6> -->
+                    </div>
+                </div>
+                <!-- <input type="submit" class="t border-[1px] border-[#111]"> -->
+                 <div class=" w-full flex justify-center items-center">
+                    <!-- <input type="submit"> -->
+                     <button type="submit" id="submit-button" class="bg-green-500 px-[9%] py-[2%] rounded-[10px] text-[.9vw] text-[#fff] mt-[20px]">Submit</button>
+                 </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    $(document).ready(function(){
+
+        $("#submit").submit(function(event){
+            event.preventDefault()
+            $("#err").text("");
+            
+            let first_name = $("#first-name").val()
+            let last_name = $("#last-name").val()
+            let name_regex = /\d/
+            let name_regex2 = !/\d/
+            if (first_name === "" || last_name === "") {
+                $("#err").text("Enter the valid name.")
+            }else{
+                if(name_regex.test(first_name )){
+                    
+                    $("#err").text("Enter the valid name.")
+                }
+                if(name_regex.test(last_name )){
+                    
+                    $("#err").text("Enter the valid name.")
+                }
+            }
+            
+            let std_id = $("#std-id").val()
+            // let std_id_regex = //
+            let std_id_regex = /^\d+$/;
+            if (std_id === "" ) {
+                $("#err").text("Enter the valid Student ID.")
+            }else
+            {
+                if (!std_id_regex.test(std_id)) {
+                    $("#err").text("Enter the valid Student ID.")
+                }
+            }
+            
+            let email_regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+            let email = $("#email").val()
+            
+            if (!email_regex.test(email)) {
+                
+                $("#err").text("Enter the valid Email ID.")
+            }
+        })
+
+    })
+</script>
