@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <div class="main">
+        <center>
+            <div class="form">
+                <div class="box">
+                    <a href="login.html" id="signup">Login</a><br><br><br><br>
+                    <p id="reg"><b>Registration</b></p>
+                    <form action="login.html" id="sig">
+                        <br><br>
+                        <label for="">Username <span>*</span></label> <br>
+                        <input type="text" id="name"> <br><br>
+                        <label for="" id="em">E-mail <span>*</span></label> <br>
+                        <input type="email" id="email"> <br><br>
+                        <label for="">Password <span>*</span></label> <br>
+                        <input type="text" id="passwrod"> <br><br>
+                        <label for="" id="Confrim_Pass">Confirm Password <span>*</span></label> <br>
+                        <input type="text" id="Confrim_Passasswrod"> <br><br><br>
+                        <input type="submit" value="Sign up" id="sub">
+                        <br><br><br>
+                        <p id="error"></p><br><br>
+
+                    </form>
+
+                </div>
+            </div>
+        </center>
+    </div>
+</body>
+
+</html>
+<script>
+    $(document).ready(function () {
+        $("#sig").submit(function (event) {
+            event.preventDefault();
+            $("#error").text(" ");
+
+            
+            let password = $("#passwrod").val()
+            let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
+            if (password == "") {
+                $("#error").text("Enter Password");
+            } else if (!passwordRegex.test(password)) {
+                $("#error").text("Enter Strong Password");
+            }else{
+                $(document).ready(function(){
+        $("#sub").click(function(){
+            window.location.href = "login.html"
+        })
+    })
+            }
+            
+            let Confrim_Passassword = $("#Confrim_Passasswrod").val()
+            if(password != Confrim_Passassword){
+            $("#error").text("Password & Confirm Password Not Match !");
+            }else{
+                $(document).ready(function(){
+        $("#sub").click(function(){
+            window.location.href = "login.html"
+        })
+    })
+            }
+
+            let email = $("#email").val()
+            if (email == "") {
+                $("#error").text("Enter Email ID");
+            }else{
+                $(document).ready(function(){
+        $("#sub").click(function(){
+            window.location.href = "login.html"
+        })
+    })
+            }
+
+            let name = $("#name").val()
+            if (name == "") {
+                $("#error").text("Please Enter Name");
+            }else{
+                $(document).ready(function(){
+        $("#sub").click(function(){
+            window.location.href = "login.html"
+        })
+    })
+            }
+        })
+    })
+
+    // $(document).ready(function(){
+    //     $("#sub").click(function(){
+    //         window.location.href = "login.html"
+    //     })
+    // })
+
+    
+</script>
