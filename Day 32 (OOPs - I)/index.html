@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1 id="ans"></h1>
+        <br><br><br>
+        <h1 id="ans2"></h1>
+        <br><br><br>
+        <div>
+            <label for="">1's number</label>
+            <input id="num1" type="number">
+            <label for="">2's number</label>
+            <input id="num2" type="number">
+
+            <h1 id="ans3"></h1>
+            <h1 id="ans3_2"></h1>
+        </div>
+    </center>
+</body>
+</html>
+<script>
+    let num1 = document.getElementById("num1").value
+    let num2 = document.getElementById("num2").value
+    class Person{
+        name = "Dhruv"
+        age = 16
+        occupation = "3d Render Artist"
+    }
+    class Car{
+        color = "Black"
+        price = "49,00,000"
+        name = "Toyota Fortuner"
+    }
+
+    class calculator{
+        sum = +num1 + +num2
+        sub = +num1 - +num2
+
+    }
+    let obj1 = new Person()
+    document.getElementById("ans").innerHTML = obj1.name + "<br>" + obj1.age + "<br> " + obj1.occupation
+    
+    let obj2 = new Car()
+    document.getElementById("ans2").innerHTML = obj2.name + "<br>" + obj2.color + "<br> " + obj2.name
+    
+    let obj3 = new calculator()
+    document.getElementById("ans3").innerHTML = obj3.sum
+    document.getElementById("ans3_2").innerHTML = obj3.sub
+
+
+
+</script>
