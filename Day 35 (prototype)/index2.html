@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let arr = [1,2,3,4,5,6]
+
+
+    Array.prototype.prince = function(el){
+
+        let newarr = []
+        for(let i = 0 ; i < this.length ; i++){
+            if(this[i] !== el){
+                newarr.push(this[i])
+            }
+        }
+        return newarr
+        }
+        let el = arr.filter((el)=>{
+            return el % 2 !== 0
+        })
+        console.log(el)
+</script>
