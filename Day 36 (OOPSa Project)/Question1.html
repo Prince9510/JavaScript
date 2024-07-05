@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question_1</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let Main_Array = [1 , 2 , 3 , 4 , 5]
+
+    Array.prototype.CUBE = function(element){
+        let FristNew = [] 
+        for(let i = 0; i < this.length; i++){
+            FristNew.push(element(this[i]))
+    }
+    return FristNew
+}
+    Array.prototype.ODD = function(element){
+        let SecondNew= []
+        for(let i = 0; i < this.length; i++){
+         if(element(this[i])){
+            SecondNew.push(this[i])
+        }
+    }
+    return SecondNew
+}
+    let ans = Main_Array.CUBE((element)=>{
+        return element * element * element
+})
+        console.log(ans)
+    let ans2 = Main_Array.ODD((element)=>{
+        return element % 2 == 1
+})
+        console.log(ans2)
+</script>

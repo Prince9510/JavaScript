@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Animal {
+        constructor(Animal_Name , Animal_Food , Animal_Sound){
+            this.Animal_Name = Animal_Name
+            this.Animal_Food = Animal_Food
+            this.Animal_Sound = Animal_Sound
+        }
+        Eat(){
+        console.log(this.Animal_Name + " is eating " + this.Animal_Food);
+        }
+        Sleep(Animal_name){
+        console.log(this.Animal_Name + " is Sleeping");
+        }
+        PetSound(){
+        console.log(this.Animal_Name + " Sound  is " + this.Animal_Sound);
+        }
+    }
+    class cat extends Animal {
+   }
+    class dog extends Animal {
+   }
+
+   let myCat = new cat ("oly", "Fish" , "Meow")
+   myCat.Eat("oly" , "Fish")
+   myCat.Sleep("oly")
+   myCat.PetSound("oly" , "Meow")
+   let myDog = new dog ("Andrew tate", "Mouse" , "BHAO BHAO")
+   myDog.Eat()
+   myDog.Sleep("Andrew tate")
+   myDog.PetSound()
+
+</script>

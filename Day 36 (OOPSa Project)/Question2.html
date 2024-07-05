@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question_2</title>
+</head>
+<body>
+    
+</body>
+</html>
+ <script>
+    class automobile{
+        constructor (Car_Name , Car_Price ,Car_Range){
+            this.Car_Name = Car_Name
+            this.Car_Price = Car_Price
+            this.Car_Range = Car_Range 
+        }
+        Range(Car_Name , Car_Range){
+        console.log(this.Car_Name +" Range " +  this.Car_Range + "Km/h")
+        }
+        Price(Car_Name , Car_Price){
+        console.log(this.Car_Name +" Price " + this.Car_Price +"₹")
+        }
+    }
+        class electricVehicle extends automobile {
+    }
+
+        let BMW = new electricVehicle("BMW",8000000,309)
+        BMW.Range("BMW",309)
+        BMW.Price("BMW",8000000)
+
+        // second
+
+        let BYD = new electricVehicle("BYD",4000000,215)
+        BYD.Range("BYD",215)
+        BYD.Price("BYD",4000000)
+</script>
