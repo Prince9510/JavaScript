@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    class Animal {
+    
+        sound(name){
+            console.log(this.name)
+        }
+        
+    }
+    class Cat extends Animal {
+        sound(name) {
+            console.log(name + " Meowwwww.....")
+        }
+    }
+    class Dog extends Animal {
+        sound() {
+            console.log(name + " woof...woof....")
+        }
+    }
+    class Horse extends Animal {
+        sound() {
+            console.log(name + " Heheheheheheheheheheheheheheheheh")
+        }
+    }
+    let cat = new Cat()
+    // cat.animal_sound()
+    cat.sound("miller")
+    let dog = new Dog()
+    // dog.animal_sound()
+    dog.sound("Tommy")
+    let horse = new Horse("")
+    // horse.animal_sound()
+    horse.sound("Chetak")
+
+</script>   
