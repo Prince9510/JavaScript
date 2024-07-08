@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+}
+#main{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 200px;
+    background-color: #02395a;
+}
+.inner-main{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+.inner-main i {
+    font-size: 40px;
+    color: white;
+}
+.inner-main h1{
+    color: white;
+    font-size: 40px;
+}
+.inner-main span {
+    color: #708da0;
+    font-size: 20px;
+}
+</style>
+<body>
+        <div id="main">
+            <div class="inner-main">
+                <center>
+                <i class="fa-regular fa-user"></i>
+                <h1 id="one"></h1>
+                <span>Student Trained</span>
+            </center>
+            </div>
+            <div class="inner-main">
+                <center>
+                <i class="fa-regular fa-building"></i>
+                <h1 id="two"></h1>
+                <span>Student Trained</span>
+            </center>
+            </div>
+            <div class="inner-main">
+                <center>
+                <!-- <i class="fa-regular fa-user"></i> -->
+                <i class="fa-regular fa-newspaper"></i>
+                <h1 id="three"></h1>
+                <span>Student Trained</span>
+            </center>
+            </div>
+            <div class="inner-main">
+                <center>
+                <i class="fa-regular fa-user"></i>
+                <h1 id="four"></h1>
+                <span>Student Trained</span>
+            </center>
+            </div>
+            <div class="inner-main">
+                <center>
+                <i class="fa-regular fa-user"></i>
+                <h1 id="five"></h1>
+                <span>Student Trained</span>
+            </center>
+            </div>
+        </div>
+</body>
+</html>
+
+<script>
+    let one = 0
+    let two = 0
+    let stop = setInterval(()=>{
+        one += 100
+
+        document.getElementById("one").innerHTML = one + " +"
+        if(one === 37500) {
+            clearInterval(stop)
+        }
+        
+        
+    },1)
+
+    //// 2222 
+
+     let stop2 = setInterval(()=>{
+        two++
+
+        document.getElementById("two").innerHTML = two + " +"
+        if(two === 22) {
+            clearInterval(stop2)
+        }
+        
+        
+    },100)
+
+
+        ///3333
+    let three = 0
+
+        let stop3 = setInterval(()=>{
+        three++
+
+        document.getElementById("three").innerHTML = three + " +"
+        if(three === 8) {
+            clearInterval(stop3)
+        }
+    },100)
+
+
+    //// 444
+    let four = 0
+    let stop4 = setInterval(()=>{
+        four++
+
+        document.getElementById("four").innerHTML = four + " +"
+        if(four === 50) {
+            clearInterval(stop4)
+        }
+    },50)
+
+
+    ///
+
+
+    let five = 0
+    let stop5 = setInterval(()=>{
+        five += 10
+
+        document.getElementById("five").innerHTML = five + " +"
+        if(five === 1500) {
+            clearInterval(stop5)
+        }
+    },1)
+
+
+</script>
