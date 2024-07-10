@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  /* background: #00182f; */
+  color: white;
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 70%);
+}
+p{
+    color: #00182f;
+}
+#counter {
+  font-size: 80px;
+  color: #00182f;
+}
+.main-slide{
+    background-color: aqua;
+    width: 100%;
+    height: 400px;
+}
+img{
+    width: inherit;
+    object-fit: cover;
+    height: inherit;
+}
+</style>
+<body>
+    
+    <div class="main-slide">
+        <img src="https://cdn.pixabay.com/photo/2021/04/29/06/23/planet-6215636_1280.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2016/11/29/02/20/astronomy-1866822_640.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2017/08/14/23/44/star-2642378_640.jpg" alt="">
+    </div>
+
+    <!-- counter  -->
+    <div class="container">
+        <div class="counter">
+          <p>Total Founded Planet</p>
+          <div id="counter">0</div>
+        </div>
+      </div>
+
+      <!-- kjfnkjdfnkj -->
+</body>
+</html>
+
+<script>
+
+let Counter = 0
+    
+    let stop = setInterval(()=>{
+        Counter += 1000
+
+        document.getElementById("counter").innerHTML = Counter + " +"
+        if(Counter === 150000) {
+            clearInterval(stop)
+        }
+    },1)
+
+
+
+    // slider
+
+    let img = document.querySelectorAll("img")
+    let index = 0
+
+    function slides(index){
+        for(let i = 0 ; i < img.length; i++){
+            img[i].style.display = "none"
+        }
+        img[index].style.display = "block"
+    }
+
+    
+    function show(){
+        setInterval(()=>{
+            slides(index)
+            index++
+
+            if(index === img.length){
+                index = 0
+            }
+
+        },1000)
+    }
+    show()
+</script>
