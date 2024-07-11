@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<div>
+
+</div>
+</body>
+
+</html>
+<script>
+
+    fetch('https://fakestoreapi.com/products')
+
+        .then((res) => {
+            return res.json()
+        }).then((json) => {
+            api(json)
+        }).catch((error) => {
+            confirm.log(error)
+        })
+        function api(json){
+           json.map((el)=>{
+            let div=document.createElement("h1");
+
+            div.innerHTML=el.title;
+            document.body.appendChild(div)
+            let price=document.createElement("h2");
+            price.innerHTML=el.price;
+            document.body.appendChild(price)
+           })
+        }
+
+
+
+
+
+</script>
