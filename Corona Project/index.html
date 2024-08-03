@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+        }
+        #outer {
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #inner {
+            width: 500px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        #inputbox {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        #search_btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #008080;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #cases {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .case {
+            text-align: center;
+        }
+        .case label {
+            font-size: 1.2rem;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .case p {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        #positive_case {
+            color: #000080;
+        }
+        #recoverd_case {
+            color: #00FF00;
+        }
+        #deceas_case {
+            color: #FF4500;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+            <input type="text" placeholder="State" id="inputbox">
+            <button id="search_btn">Search</button>
+            <div id="cases">
+                <div class="case">
+                    <label for="positive_case">Total Cases</label>
+                    <p id="positive_case">0</p>
+                </div>
+                <div class="case">
+                    <label for="recoverd_case">Recovered Cases</label>
+                    <p id="recoverd_case">0</p>
+                </div>
+                <div class="case">
+                    <label for="d_case">Deceased Cases</label>
+                    <p id="deceas_case">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("search_btn").addEventListener("click", function () {
+            let API = "https://data.covid19india.org/v4/min/data.min.json";
+            fetch(API).then((res) => {
+                return res.json();
+            }).then((json) => {
+                displayData(json);
+                console.log(json);
+            });
+        });
+
+        function displayData(data) {
+            let input = document.getElementById("inputbox").value.toUpperCase();
+            let positive = document.getElementById("positive_case");
+            positive.innerHTML = data[input]?.total.confirmed || "N/A";
+            let recover = document.getElementById("recoverd_case");
+            recover.innerHTML = data[input]?.total.recovered || "N/A";
+            let deceas = document.getElementById("deceas_case");
+            deceas.innerHTML = data[input]?.total.deceased || "N/A";
+        }
+
+        function changeStyles() {
+            document.getElementById("outer").style.backgroundImage = "url('new_background_image_url')";
+            document.getElementById("outer").style.backgroundColor = "#000";
+            document.getElementById("positive_case").style.color = "blue";
+            document.getElementById("recoverd_case").style.color = "green";
+            document.getElementById("deceas_case").style.color = "red";
+        }
+        changeStyles();
+    </script>
+</body>
+</html>
