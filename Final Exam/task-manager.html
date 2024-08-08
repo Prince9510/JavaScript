@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management</title>
+    <link rel="stylesheet" href="Q3.css" />
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f8ff;
+        color: #444;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        color: #2f4f4f;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 25px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 14px;
+        background-color: #5f9ea0;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #53868b;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      table th,
+      table td {
+        padding: 14px;
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+
+      table th {
+        background-color: #5f9ea0;
+        color: white;
+      }
+
+      #delete_btn {
+        padding: 8px 14px;
+        background-color: #dc143c;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      #delete_btn:hover {
+        background-color: #c1121e;
+      }
+
+      #time {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Task Tracker</h1>
+    <div class="container">
+      <form>
+        <label for="task">Task Name</label>
+        <input id="task" type="text" placeholder="Enter Task Name" />
+
+        <label for="priority">Priority</label>
+        <select id="priority">
+          <option value="High">High</option>
+          <option value="Low">Low</option>
+        </select>
+
+        <input type="submit" value="Add Task">
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Priority</th>
+            <th>Time Consume</th>
+            <th>Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Tasks will be added here -->
+        </tbody>
+      </table>
+    </div>
+    <script src="index3.js"></script>
+    <script>
+      document.querySelector("form").addEventListener("submit", todoFunc);
+      function todoFunc(event) {
+        event.preventDefault();
+
+        let name = document.querySelector("#task").value;
+        let priority = document.querySelector("#priority").value;
+
+        let tr = document.createElement("tr");
+
+        let td1 = document.createElement("td");
+        td1.textContent = name;
+
+        let td2 = document.createElement("td");
+        td2.textContent = priority;
+        td2.style.color = priority === "High" ? "red" : "blue";
+
+        let td3 = document.createElement("td");
+        td3.setAttribute("id", "time");
+        td3.textContent = priority === "High" ? "More" : "Less";
+        td3.style.color = priority === "High" ? "red" : "blue";
+
+        let td4 = document.createElement("td");
+        td4.style.textAlign = "center";
+        let btn = document.createElement("button");
+        btn.setAttribute("id", "delete_btn");
+        btn.textContent = "Delete";
+        btn.addEventListener("click", function () {
+          tr.remove();
+        });
+
+        td4.appendChild(btn);
+        tr.append(td1, td2, td3, td4);
+        document.querySelector("tbody").append(tr);
+      }
+    </script>
+  </body>
+</html>

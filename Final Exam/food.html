@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Webpage</title>
+    <style>
+        body {
+            color: #333333;
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f1eb;
+        }
+
+        #main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 275px;
+            text-align: center;
+            padding: 15px;
+            color: #333333;
+            border: 1px solid #dddddd;
+        }
+
+        .product img {
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product h4 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+            color: #d23f3f;
+        }
+
+        .product .price {
+            font-size: 1.25rem;
+            color: #4caf50;
+            margin: 10px 0;
+        }
+
+        .product input {
+            height: 35px;
+            width: 90%;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+            background-color: #f8f8f8;
+            color: #333333;
+            padding-left: 10px;
+            margin: 10px 0;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .product button {
+            height: 35px;
+            width: 90px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .product button#edit-btn {
+            background-color: #4caf50;
+        }
+
+        .product button#update-btn {
+            background-color: #ff9800;
+        }
+
+        .product button#delete-btn {
+            background-color: #f44336;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+    <script>
+        let arr = [
+        
+           
+            {
+                "idCategory": "2",
+                "strCategory": "Chicken",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/chicken.png",
+                "price": "$10.99"
+            },
+            {
+                "idCategory": "9",
+                "strCategory": "Side",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/side.png",
+                "price": "$5.99"
+            },
+            {
+                "idCategory": "3",
+                "strCategory": "Dessert",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/dessert.png",
+                "price": "$7.99"
+            },
+            {
+                "idCategory": "4",
+                "strCategory": "Lamb",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/lamb.png",
+                "price": "$18.99"
+            },
+            {
+                "idCategory": "5",
+                "strCategory": "Miscellaneous",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/miscellaneous.png",
+                "price": "$12.49"
+            },
+            {
+                "idCategory": "6",
+                "strCategory": "Pasta",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/pasta.png",
+                "price": "$9.49"
+            },
+            {
+                "idCategory": "14",
+                "strCategory": "Goat",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/goat.png",
+                "price": "$17.49"
+            },
+            {
+                "idCategory": "7",
+                "strCategory": "Pork",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/pork.png",
+                "price": "$14.99"
+            },
+            {
+                "idCategory": "1",
+                "strCategory": "Beef",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/beef.png",
+                "price": "$15.99"
+            },
+            {
+                "idCategory": "8",
+                "strCategory": "Seafood",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/seafood.png",
+                "price": "$16.99"
+            },
+           
+            {
+                "idCategory": "10",
+                "strCategory": "Starter",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/starter.png",
+                "price": "$8.49"
+            },
+            {
+                "idCategory": "11",
+                "strCategory": "Vegan",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/vegan.png",
+                "price": "$13.99"
+            },
+            {
+                "idCategory": "12",
+                "strCategory": "Vegetarian",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/vegetarian.png",
+                "price": "$11.99"
+            },
+            {
+                "idCategory": "13",
+                "strCategory": "Breakfast",
+                "strCategoryThumb": "https://www.themealdb.com/images/category/breakfast.png",
+                "price": "$6.99"
+            },
+            
+        ];
+
+        function DisplayData() {  
+            let div = document.getElementById("main");
+            div.innerHTML = '';
+
+            arr.forEach((el, index) => {
+                let productDiv = document.createElement("div");
+                productDiv.className = "product";
+                
+                let picture = document.createElement("img");
+                picture.setAttribute("src", el.strCategoryThumb);
+
+                let titleElement = document.createElement("h4");
+                titleElement.innerText = el.strCategory;
+                
+                let priceElement = document.createElement("div");
+                priceElement.className = "price";
+                priceElement.innerText = el.price;
+
+                let priceInput = document.createElement("input");
+                priceInput.setAttribute("id", `price-input-${index}`);
+                
+                let editButton = document.createElement("button");
+                editButton.innerText = "Edit Price";
+                editButton.setAttribute("id", "edit-btn");
+                editButton.addEventListener("click", () => {
+                    EditPrice(el.price, index, `price-input-${index}`);
+                });
+                
+                let updateButton = document.createElement("button");
+                updateButton.innerText = "Update";
+                updateButton.setAttribute("id", "update-btn");
+                updateButton.addEventListener("click", () => {
+                    UpdatePrice(index, `price-input-${index}`, priceElement);
+                });
+
+                let deleteButton = document.createElement("button");
+                deleteButton.innerText = "Delete";
+                deleteButton.setAttribute("id", "delete-btn");
+                deleteButton.addEventListener("click", () => {
+                    DeleteData(index, productDiv);
+                });
+                
+                let buttonContainer = document.createElement("div");
+                buttonContainer.className = "button-container";
+                buttonContainer.append(editButton, updateButton, deleteButton);
+
+                productDiv.append(picture, titleElement, priceElement, priceInput, buttonContainer);
+                div.append(productDiv);
+            });
+        }
+
+        function EditPrice(price, index, inputId) {
+            let input = document.getElementById(inputId);
+            input.value = price;
+        } 
+
+        function UpdatePrice(index, inputId, priceElement) {
+            let input = document.getElementById(inputId);
+            priceElement.innerText = input.value;
+            arr[index].price = input.value;
+        }
+
+        function DeleteData(index, productDiv) {
+            arr.splice(index, 1);
+            productDiv.remove();
+        }
+        DisplayData();
+    </script>
+</body>
+</html>
