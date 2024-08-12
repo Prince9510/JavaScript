@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Manipulation Methods</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="value1">Before</h1>
+    <h1 id="value2">After</h1>
+    <div>
+        <button onclick="modifyArray('push')">Push</button>
+        <button onclick="modifyArray('pop')">Pop</button>
+        <button onclick="modifyArray('slice')">Slice</button>
+        <button onclick="modifyArray('splice')">Splice</button>
+        <button onclick="modifyArray('shift')">Shift</button>
+        <button onclick="modifyArray('unshift')">Unshift</button>
+        <button onclick="modifyArray('map')">Map</button>
+        <button onclick="modifyArray('filter')">Filter</button>
+        <button onclick="modifyArray('reduce')">Reduce</button>
+        <button onclick="modifyArray('sort')">Sort</button>
+        <button onclick="modifyArray('reverse')">Reverse</button>
+    </div>
+
+    <script>
+        function modifyArray(method) {
+            let arr1 = [1, 2, 3, 4, 5, 6, 7];
+            let arr2;
+
+            switch (method) {
+                case 'push':
+                    arr2 = [...arr1];
+                    arr2.push(8);
+                    break;
+                case 'pop':
+                    arr2 = [...arr1];
+                    arr2.pop();
+                    break;
+                case 'slice':
+                    arr2 = arr1.slice(2);
+                    break;
+                case 'splice':
+                    arr2 = [...arr1];
+                    arr2.splice(3, 1, 14);
+                    break;
+                case 'shift':
+                    arr2 = [...arr1];
+                    arr2.shift();
+                    break;
+                case 'unshift':
+                    arr2 = [...arr1];
+                    arr2.unshift(0);
+                    break;
+                case 'map':
+                    arr2 = arr1.map(el => el * 2);
+                    break;
+                case 'filter':
+                    arr2 = arr1.filter(el => el % 2 === 0);
+                    break;
+                case 'reduce':
+                    const sum = arr1.reduce((acc, item) => acc + item, 0);
+                    document.getElementById("value2").textContent = `After: ${sum}`;
+                    return;
+                case 'sort':
+                    arr2 = [...arr1];
+                    arr2.sort((a, b) => a - b);
+                    break;
+                case 'reverse':
+                    arr2 = [...arr1];
+                    arr2.reverse();
+                    break;
+                default:
+                    return;
+            }
+
+            document.getElementById("value1").textContent = `Before: ${arr1}`;
+            document.getElementById("value2").textContent = `After: ${arr2}`;
+        }
+    </script>
+</body>
+</html>
