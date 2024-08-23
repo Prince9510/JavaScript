@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: background 0.3s ease;
+  }
+  
+  nav a:hover {
+    background: #555;
+    border-radius: 4px;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  .product-container, .cart-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .product, .cart-item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .product img, .cart-item img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .product-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .product-button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .product-button:hover {
+    background: #218838;
+  }
+  
+  .cart-item {
+    position: relative;
+  }
+  
+  .cart-item button {
+    margin-top: 1rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .cart-item button:hover {
+    background: #0056b3;
+  }
+  
+  .cart-item button.edit {
+    background: #ffc107;
+  }
+  
+  .cart-item button.edit:hover {
+    background: #e0a800;
+  }
+  
+  .cart-item button.delete {
+    background: #dc3545;
+  }
+  
+  .cart-item button.delete:hover {
+    background: #c82333;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* //////////////////////////////// */
+
+  .edit-form-container {
+    display: none;
+    margin-top: 2rem;
+  }
+  
+  .edit-form {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f9f9f9;
+  }
+  
+  .edit-form label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  .edit-form input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .edit-form button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .edit-form button:hover {
+    background: #0056b3;
+  }
+  

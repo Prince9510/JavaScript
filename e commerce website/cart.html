@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+    <style>
+  .edit-form {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f9f9f9;
+    margin-top: 1rem;
+  }
+
+  .edit-form label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .edit-form input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .edit-form button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 0.5rem;
+  }
+
+  .edit-form button:hover {
+    background: #0056b3;
+  }
+
+  .edit-form-container {
+    display: none;
+    margin-top: 2rem;
+  }
+</style>
+
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Your Cart</h1>
+    <div id="cart" class="cart-container"></div>
+    <div id="edit-form" class="edit-form-container"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
